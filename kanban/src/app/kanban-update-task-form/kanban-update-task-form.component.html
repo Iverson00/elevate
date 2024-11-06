@@ -1,0 +1,52 @@
+<form class="form-container" [formGroup]="taskForm" (ngSubmit)="saveTask()">
+    <div class="form-group">
+        <label for="taskName">
+            <i class="icon">🔖</i> Task Name
+        </label>
+        <input id="taskName" formControlName="taskName" placeholder="Enter task name">
+        <div *ngIf="submitted && taskForm.get('taskName')?.hasError('required')" class="error-message">
+            <small>Task name is required</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description">
+            <i class="icon">📝</i> Description
+        </label>
+        <textarea id="description" formControlName="description" placeholder="Enter description"></textarea>
+        <div *ngIf="submitted && taskForm.get('description')?.hasError('required')" class="error-message">
+            <small>Description is required</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="createdDate">
+            <i class="icon">📅</i> Start Date
+        </label>
+        <input type="date" id="createdDate" formControlName="createdDate">
+    </div>
+
+    <div class="form-group">
+        <label for="dueDate">
+            <i class="icon">⏳</i> Due Date
+        </label>
+        <input type="date" id="dueDate" formControlName="dueDate">
+        <div *ngIf="submitted && taskForm.get('dueDate')?.hasError('required')" class="error-message">
+            <small>Due date is required</small>
+        </div>
+    </div>
+
+    <!-- Error Message Popup -->
+    <div *ngIf="submitted && taskForm.invalid" class="alert alert-warning">
+        <strong>Warning!</strong> Please fill in all required fields before updating.
+    </div>
+
+    <div class="button-group">
+        <button type="submit" class="submit-button">
+            Update
+        </button>
+        <button type="button" class="cancel-button" (click)="closeUpdateForm()">
+            Cancel
+        </button>
+    </div>
+</form>

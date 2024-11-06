@@ -1,0 +1,71 @@
+/* Modal Styles */
+
+.modal-content {
+  background-color: #ffffff; /* White content area */
+  color: #333333; /* Dark text for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.modal-header {
+  color: #333333; /* Dark header text */
+  border-bottom: 1px solid #ffd700; /* Gold accent border */
+}
+
+.modal-title {
+  font-size: large;
+  font-weight: 600;
+  color: #ffd700; /* Gold title */
+  font-family: Montserrat, sans-serif;
+}
+
+.modal-body {
+  font-size: small;
+  font-weight: 500;
+  color: #333333; /* Dark body text */
+  font-family: Montserrat, sans-serif;
+}
+
+.modal-footer {
+  border-top: 1px solid #ffd700; /* Gold accent for footer border */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close {
+  border-radius: 10px;
+  height: 20px;
+  color: #ffd700; /* Gold close button */
+  font-size: large;
+}
+
+.confirm-btn {
+  color: #fff;
+  background-color: #ffd700; /* Gold button */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #f7c600; /* Slightly darker gold on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .modal-content {
+    margin: 20px;
+    padding: 16px;
+  }
+
+  .modal-title,
+  .modal-body,
+  .confirm-btn {
+    font-size: smaller;
+  }
+}

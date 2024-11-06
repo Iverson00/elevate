@@ -1,0 +1,145 @@
+:root {
+  --primary-bg: #e5e8ef;
+  --kanban-bg: #1d3557;
+  --column-bg: #457b9d;
+  --task-card-bg: #f4f7fb;
+  --task-logo-bg: #f77f00;
+  --add-icon-bg: #fcbf49;
+  --logout-bg: #e63946;
+  --logout-hover-bg: #d62828;
+  --add-icon-hover-bg: #f77f00;
+  --scrollbar-track: #1d3557;
+  --scrollbar-thumb: linear-gradient(135deg, #f77f00, #fcbf49);
+  --text-color: #333;
+  --header-color: #f1faee;
+  --task-content-color: #457b9d;
+  --column-hover-bg: #2a4d7c;
+  --task-card-shadow: rgba(0, 0, 0, 0.1);
+  --board-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.dashboard {
+  position: relative;
+  box-sizing: border-box;
+  width: auto;
+  background-color: var(--primary-bg);
+  height: 100vh;
+  padding: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem;
+}
+
+/* Common button styling */
+.btn {
+  background-color: #FFD700; /* Yellow background */
+  color: #333; /* Dark text color */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #000; /* Black border for contrast */
+  padding: 0.4rem 1rem; /* Padding for better spacing */
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  text-transform: uppercase; /* Make text uppercase */
+  font-weight: bold;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: #FFC300; /* Slightly darker yellow on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Specific button styling for Create and Log Out */
+.add-icon,
+.logout {
+  background-color: #FFD700;
+  border-radius: 10px;
+  border: 2px solid #000;
+  color: #333;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: small;
+}
+
+.add-icon:hover,
+.logout:hover {
+  background-color: #FFC300;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  padding-top: 80px;
+  height: 90vh;
+  gap: 10px;
+  background-color: var(--kanban-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--board-shadow);
+  overflow: hidden;
+}
+
+/* Column Styling */
+.example-list {
+  background-color: var(--column-bg);
+  border-radius: 10px;
+  padding: 15px;
+  height: calc(100vh - 220px);
+  overflow-y: scroll; /* Scrollbar functionality */
+  width: calc(30% - 10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+/* Hide scrollbar in various browsers */
+.example-list::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
+.example-list {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+/* Task Card Styling */
+.example-box {
+  background-color: var(--task-card-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px var(--task-card-shadow);
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Column Header Styling */
+.h2-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--header-color);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ffd700;
+}

@@ -1,0 +1,60 @@
+<form class="form-container" [formGroup]="taskForm" (ngSubmit)="saveTask()">
+    <!-- Task Name Field -->
+    <div class="form-group">
+        <label for="taskName">
+            <i class="fas fa-tasks icon"></i> Task Name
+        </label>
+        <input id="taskName" formControlName="taskName" placeholder="Enter task name">
+        <div *ngIf="submitted && taskForm.get('taskName')?.hasError('required')" class="error-message">
+            <small>Task name is required</small>
+        </div>
+    </div>
+
+    <!-- Description Field -->
+    <div class="form-group">
+        <label for="description">
+            <i class="fas fa-align-left icon"></i> Description
+        </label>
+        <textarea id="description" formControlName="description" placeholder="Enter task description"></textarea>
+        <div *ngIf="submitted && taskForm.get('description')?.hasError('required')" class="error-message">
+            <small>Description is required</small>
+        </div>
+    </div>
+
+    <!-- Created Date Field -->
+    <div class="form-group">
+        <label for="createdDate">
+            <i class="fas fa-calendar-alt icon"></i> Start Date
+        </label>
+        <input type="date" id="createdDate" formControlName="createdDate">
+        <div *ngIf="submitted && taskForm.get('createdDate')?.hasError('required')" class="error-message">
+            <small>Start date is required</small>
+        </div>
+    </div>
+
+    <!-- Due Date Field -->
+    <div class="form-group">
+        <label for="dueDate">
+            <i class="fas fa-calendar-day icon"></i> Due Date
+        </label>
+        <input type="date" id="dueDate" formControlName="dueDate">
+        <div *ngIf="submitted && taskForm.get('dueDate')?.hasError('required')" class="error-message">
+            <small>Due date is required</small>
+        </div>
+    </div>
+
+    <!-- Error Message Popup -->
+    <div *ngIf="submitted && taskForm.invalid" class="alert alert-warning">
+        <strong>Warning!</strong> Please fill in all required fields before submitting.
+    </div>
+
+    <!-- Buttons section -->
+    <div class="button-group">
+        <button type="submit" class="submit-button">
+            <i class="fas fa-plus"></i> Create
+        </button>
+        <button type="button" class="cancel-button" (click)="closeForm()">
+            <i class="fas fa-times"></i> Cancel
+        </button>
+    </div>
+</form>

@@ -1,0 +1,37 @@
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.area {
+    position: absolute;
+    top: 0;
+}
+
+.position-relative {
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+span {
+    font-family: montserrat;
+    font-size: small;
+    font-weight: 500;
+    text-align: start;
+}
+
+.cdk-drag-preview {
+    overflow: hidden;
+    display: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
